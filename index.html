@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>La Crema | Aguas Frescas Campeonas</title>
+
+<style>
+
+:root{
+--principal:#ee0056;
+--secundario:#f2efeb;
+--acento:#fe9900;
+--oscuro:#222;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:var(--secundario);
+color:#333;
+}
+
+/* ================= HEADER ================= */
+
+header{
+min-height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=1600");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero{
+max-width:900px;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:15px;
+color:var(--acento);
+}
+
+.hero p{
+font-size:1.2rem;
+margin-bottom:25px;
+}
+
+select{
+padding:12px;
+border:none;
+border-radius:10px;
+font-size:1rem;
+font-weight:bold;
+background:var(--acento);
+color:#fff;
+cursor:pointer;
+}
+
+/* ================= GENERALES ================= */
+
+section{
+padding:80px 8%;
+}
+
+.titulo{
+text-align:center;
+color:var(--principal);
+margin-bottom:40px;
+font-size:2.2rem;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.card h3{
+color:var(--acento);
+margin-bottom:10px;
+}
+
+/* ================= PRODUCTOS ================= */
+
+.grid-productos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.producto{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.producto-header{
+background:var(--principal);
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.lista-sabores{
+padding:20px;
+}
+
+.sabor{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px;
+margin-bottom:10px;
+border-bottom:1px solid #ececec;
+}
+
+.precio{
+background:var(--acento);
+color:white;
+padding:6px 12px;
+border-radius:50px;
+font-weight:bold;
+}
+
+/* ================= GALERIA ================= */
+
+.galeria-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.foto-card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+.foto-card img{
+width:100%;
+height:260px;
+object-fit:cover;
+transition:.4s;
+}
+
+.foto-card:hover img{
+transform:scale(1.07);
+}
+
+.foto-info{
+padding:15px;
+text-align:center;
+}
+
+.foto-info h3{
+color:var(--principal);
+}
+
+/* ================= PROMOCIONES ================= */
+
+.promo-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.promo{
+background:white;
+padding:25px;
+border-left:6px solid var(--principal);
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.promo h3{
+color:var(--principal);
+margin-bottom:10px;
+}
+
+/* ================= BOTONES ================= */
+
+.area-botones{
+text-align:center;
+padding:30px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:15px 25px;
+background:var(--acento);
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+background:var(--principal);
+}
+
+/* ================= REDES ================= */
+
+footer{
+background:var(--oscuro);
+color:white;
+text-align:center;
+padding:50px 20px;
+}
+
+.redes{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.redes a{
+background:var(--principal);
+padding:12px 18px;
+border-radius:10px;
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+.redes a:hover{
+background:var(--acento);
+}
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+border-radius:50%;
+background:#25D366;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:32px;
+text-decoration:none;
+color:white;
+box-shadow:0 5px 20px rgba(0,0,0,.3);
+z-index:1000;
+}
+
+/* ================= MOVIL ================= */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+section{
+padding:60px 5%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header id="inicio">
+
+<div class="hero">
+
+<h1>🥤 LA CREMA 🤼</h1>
+
+<p>
+El sabor campeón de las aguas frescas.
+Inspirados en la tradición de la lucha libre mexicana.
+</p>
+
+<select onchange="irASeccion(this.value)">
+<option value="">Ir a sección</option>
+<option value="empresa">Misión y Visión</option>
+<option value="vitroles">Vitroles</option>
+<option value="embotelladas">Embotelladas</option>
+<option value="vitocromico">Vitocrómico</option>
+<option value="galeria">Galería</option>
+<option value="promociones">Promociones</option>
+<option value="redes">Redes Sociales</option>
+</select>
+
+</div>
+
+</header>
+
+<section id="empresa">
+
+<h2 class="titulo">Misión y Visión</h2>
+
+<div class="card">
+
+<h3>Misión</h3>
+
+<p>
+Ofrecer aguas frescas de calidad excepcional, elaboradas con ingredientes seleccionados que brinden frescura, sabor y tradición mexicana.
+</p>
+
+<br>
+
+<h3>Visión</h3>
+
+<p>
+Ser la marca líder de aguas frescas reconocida por su innovación, calidad y experiencia inspirada en la lucha libre mexicana.
+</p>
+
+</div>
+
+</section>
+
+<section id="vitroles">
+
+<h2 class="titulo">Vitroles Campeones</h2>
+
+<div class="producto">
+
+<div class="producto-header">
+<h3>Sabores Más Vendidos</h3>
+</div>
+
+<div id="lista-vitroles" class="lista-sabores"></div>
+
+</div>
+
+</section>
+
+<section id="embotelladas">
+
+<h2 class="titulo">Aguas Embotelladas</h2>
+
+<div class="producto">
+
+<div class="producto-header">
+<h3>Sabores Más Populares</h3>
+</div>
+
+<div id="lista-embotelladas" class="lista-sabores"></div>
+
+</div>
+
+</section>
+
+<section id="vitocromico">
+
+<h2 class="titulo">Línea Vitocrómico</h2>
+
+<div class="producto">
+
+<div class="producto-header">
+<h3>Sabores Favoritos</h3>
+</div>
+
+<div id="lista-vitocromico" class="lista-sabores"></div>
+
+</div>
+
+</section>
+
+<section id="galeria">
+
+<h2 class="titulo">Galería del Campeón</h2>
+
+<div id="galeria-dinamica" class="galeria-grid"></div>
+
+</section>
+
+<section id="promociones">
+
+<h2 class="titulo">Promociones</h2>
+
+<div class="promo-grid">
+
+<div class="promo">
+<h3>2x1 Martes Luchador</h3>
+<p>En sabores seleccionados.</p>
+</div>
+
+<div class="promo">
+<h3>Combo Máscara</h3>
+<p>Agua + botana especial.</p>
+</div>
+
+<div class="promo">
+<h3>Cliente Campeón</h3>
+<p>Acumula compras y gana bebidas gratis.</p>
+</div>
+
+</div>
+
+</section>
+
+<div class="area-botones">
+
+#inicio⬆ Volver al Inicio</a>
+
+#redes📱 Redes Sociales</a>
+
+</div>
+
+<footer id="redes">
+
+<h2>Síguenos</h2>
+
+<div class="redes">
+
+https://facebook.comFacebook</a>
+
+https://instagram.comInstagram</a>
+
+https://wa.me/5210000000000WhatsApp</a>
+
+</div>
+
+<br>
+
+<p>© 2026 La Crema. Todos los derechos reservados.</p>
+
+</footer>
+
+https://wa.me/5210000000000
+💬
+</a>
+
+<script>
+
+/* =============================
+DATOS EDITABLES
+============================= */
+
+const vitroles = [
+{sabor:"Jamaica",precio:25},
+{sabor:"Horchata",precio:25},
+{sabor:"Tamarindo",precio:25},
+{sabor:"Piña",precio:30},
+{sabor:"Mango",precio:30},
+{sabor:"Limón",precio:25},
+{sabor:"Guanábana",precio:35},
+{sabor:"Melón",precio:30},
+{sabor:"Sandía",precio:30},
+{sabor:"Fresa",precio:35}
+];
+
+const embotelladas = [
+{sabor:"Jamaica",precio:20},
+{sabor:"Horchata",precio:20},
+{sabor:"Limón",precio:20},
+{sabor:"Mango",precio:25},
+{sabor:"Piña",precio:25},
+{sabor:"Maracuyá",precio:30},
+{sabor:"Pepino con Limón",precio:25},
+{sabor:"Naranja",precio:20},
+{sabor:"Guayaba",precio:25},
+{sabor:"Toronja",precio:25}
+];
+
+const vitocromico = [
+{sabor:"Blue Raspberry",precio:35},
+{sabor:"Frutos Rojos",precio:35},
+{sabor:"Kiwi",precio:35},
+{sabor:"Piña Colada",precio:40},
+{sabor:"Mora Azul",precio:35},
+{sabor:"Durazno",precio:35},
+{sabor:"Uva",precio:35},
+{sabor:"Coco",precio:40},
+{sabor:"Ponche Tropical",precio:40},
+{sabor:"Manzana Verde",precio:35}
+];
+
+const galeria = [
+{
+titulo:"Agua de Jamaica",
+imagen:"https://images.unsplash.com/photo-1544145945-f90425340c7e?w=800"
+},
+{
+titulo:"Agua de Horchata",
+imagen:"https://images.unsplash.com/photo-1551024709-8f23befc6cf7?w=800"
+},
+{
+titulo:"Agua Tropical",
+imagen:"https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800"
+},
+{
+titulo:"Vitrol Tradicional",
+imagen:"https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=800"
+},
+{
+titulo:"Especialidades La Crema",
+imagen:"https://images.unsplash.com/photo-1464306076886-da185f6a9d05?w=800"
+},
+{
+titulo:"Sabor Campeón",
+imagen:"https://images.unsplash.com/photo-1622597467836-f3285f2131b2?w=800"
+}
+];
+
+/* =============================
+FUNCIONES
+============================= */
+
+function cargarSabores(datos,id){
+
+const contenedor=document.getElementById(id);
+
+contenedor.innerHTML="";
+
+datos.forEach(item=>{
+
+contenedor.innerHTML += `
+<div class="sabor">
+<span>${item.sabor}</span>
+<span class="precio">$${item.precio}</span>
+</div>
+`;
+
+});
+
+}
+
+function cargarGaleria(){
+
+const contenedor =
+document.getElementById("galeria-dinamica");
+
+contenedor.innerHTML="";
+
+galeria.forEach(item=>{
+
+contenedor.innerHTML += `
+<div class="foto-card">
+<img src="${item.imagen}" alt="${item.titulo}">
+<div class="foto-info">
+<h3>${item.titulo}</h3>
+</div>
+</div>
+`;
+
+});
+
+}
+
+function irASeccion(id){
+
+if(!id) return;
+
+document.getElementById(id).scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+/* =============================
+INICIO
+============================= */
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+cargarSabores(vitroles,"lista-vitroles");
+cargarSabores(embotelladas,"lista-embotelladas");
+cargarSabores(vitocromico,"lista-vitocromico");
+
+cargarGaleria();
+
+});
+
+</script>
+
+</body>
+</html>
